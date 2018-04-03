@@ -1,0 +1,31 @@
+---
+  - name:       Install utils
+    dnf:
+      name:     "{{ item }}"
+      state:    present
+    with_items:
+      - mediawriter
+      - nuntius
+      - labyrinth
+      - powertop
+      - gnome-todo
+      - wireshark
+      - ibus-typing-booster
+      - hunspell-en
+      - hunspell-hi
+      - chromium
+      - onionshare
+      - gnome-shell-extension-pomodoro
+      - exa
+      - ripgrep
+    notify:
+      - Reload systemd daemon
+      - Start and enable powertop
+
+
+
+  - name:       Added user to wireshark group
+    user:
+      name:     "{{ user }}"
+      groups:   wireshark
+      append:   yes

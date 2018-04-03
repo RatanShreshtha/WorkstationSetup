@@ -1,0 +1,18 @@
+---
+  - name:       Install more wallpaper packs
+    dnf:
+      name:     "{{ item }}"
+      state:    present
+    with_items:
+      - f26-backgrounds-gnome
+      - f25-backgrounds-gnome
+      - f24-backgrounds-gnome
+      - f23-backgrounds-gnome
+      - f22-backgrounds-gnome
+      - f21-backgrounds-gnome
+      - f26-backgrounds-extras-gnome
+      - f25-backgrounds-extras-gnome
+      - f24-backgrounds-extras-gnome
+      - f23-backgrounds-extras-gnome
+      - f22-backgrounds-extras-gnome
+      - f21-backgrounds-extras-gnome

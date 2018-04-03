@@ -1,0 +1,89 @@
+---
+  - name:          Update packages and install basic packages
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - basic
+    tags:
+      - basic
+
+
+  - name:          Setup and isntall developement tools, libraries and dependancies
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - dev_dependencies
+      - programming_lang
+      - dev_tools
+    tags:
+      - developement
+
+
+  - name:          Install necesaassy utils and packages
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - utils_packages
+    tags:
+      - utils
+
+
+  - name:          Install all necesaassy multimedia softwares
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - media_softwares
+    tags:
+      - multimedia
+
+
+  - name:          Install more wallpapers
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - wallpapers
+    tags:
+      - wallpapers
+
+
+  - name:          Install more wallpapers
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - wallpapers
+    tags:
+      - wallpapers
+
+
+  - name:          Install virtualisation softwares
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - virtualisation
+    tags:
+      - virtualisation
+
+
+  - name:          Configure vim and fish
+    hosts:         all
+    become:        true
+    become_method: sudo
+    become_user:   root
+    roles:
+      - configure
+    tags:
+      - configure

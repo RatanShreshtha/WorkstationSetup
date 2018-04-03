@@ -1,0 +1,17 @@
+---
+  - name:       Install multimedia, chat softwares
+    dnf:
+      name:     "{{ item }}"
+      state:    present
+    with_items:
+      - gimp
+      - vlc
+      - youtube-dl
+      - deluge
+      - inkscape
+      - hexchat
+      - picard
+      - entangle
+      - shotwell
+    tags:
+      - mutimedia

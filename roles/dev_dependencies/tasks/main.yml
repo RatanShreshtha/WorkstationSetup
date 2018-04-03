@@ -1,0 +1,43 @@
+---
+  - name:       Install the development, basic group
+    dnf:
+      name:     "{{ item }}"
+      state:    present
+    with_items:
+      - zlib.i686
+      - ncurses-libs.i686
+      - bzip2-libs.i686
+      - glibc.i686
+      - glibc-devel.i686
+      - libstdc++.i686
+      - zlib-devel.i686
+      - ncurses-devel.i686
+      - libX11-devel.i686
+      - libXrender.i686
+      - libXrandr.i686
+      - android-tools
+      - usbutils
+    tags:
+      - dev_deps
+
+
+  - name:       Install the development libraries
+    dnf:
+      name:     "{{ item }}"
+      state:    present
+    with_items:
+      - "@Development Tools"
+      - '@C Development Tools and Libraries'
+      - '@Basic Desktop'
+      - python-devel
+      - python3-devel
+      - python3-pip
+      - dnf-plugins-core
+      - guestfs-browser
+      - libguestfs-tools
+      - python-libguestfs
+      - virt-top
+      - gtksourceview3
+      - libselinux-python
+    tags:
+      - dev_deps
