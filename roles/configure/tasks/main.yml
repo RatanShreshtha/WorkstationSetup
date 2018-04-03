@@ -36,6 +36,7 @@
       - omf_theme
     ignore_errors: yes
 
+
   - name:        Make fish config directory
     file:
       path:      "/home/{{user}}/.config/fish/"
@@ -46,6 +47,7 @@
       - fish
       - fish_config_dir
     ignore_errors: yes
+
 
   - name:        Get fish config for user
     copy:

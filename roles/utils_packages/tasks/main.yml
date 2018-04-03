@@ -23,7 +23,6 @@
       - Start and enable powertop
 
 
-
   - name:       Added user to wireshark group
     user:
       name:     "{{ user }}"
