@@ -42,18 +42,7 @@
     roles:
       - media_softwares
     tags:
-      - multimedia
-
-
-  - name:          Install more wallpapers
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - wallpapers
-    tags:
-      - wallpapers
+      - media_softwares
 
 
   - name:          Install more wallpapers

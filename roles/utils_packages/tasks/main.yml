@@ -18,7 +18,7 @@
       - gnome-shell-extension-pomodoro
       - exa
       - ripgrep
-      - puttygen
+      - putty
     notify:
       - Reload systemd daemon
       - Start and enable powertop
