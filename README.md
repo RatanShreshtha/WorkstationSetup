@@ -52,19 +52,16 @@ playbook: site.yml
   play #3 (all): Install necesaassy utils and packages	TAGS: [utils]
       TASK TAGS: [utils]
 
-  play #4 (all): Install all necesaassy multimedia softwares	TAGS: [multimedia]
-      TASK TAGS: [multimedia, mutimedia]
+  play #4 (all): Install all necesaassy multimedia softwares	TAGS: [media_softwares]
+      TASK TAGS: [media_softwares, mutimedia]
 
   play #5 (all): Install more wallpapers	TAGS: [wallpapers]
       TASK TAGS: [wallpapers]
 
-  play #6 (all): Install more wallpapers	TAGS: [wallpapers]
-      TASK TAGS: [wallpapers]
-
-  play #7 (all): Install virtualisation softwares	TAGS: [virtualisation]
+  play #6 (all): Install virtualisation softwares	TAGS: [virtualisation]
       TASK TAGS: [virtualisation]
 
-  play #8 (all): Configure vim and fish	TAGS: [configure]
+  play #7 (all): Configure vim and fish	TAGS: [configure]
       TASK TAGS: [configure, fish, fish_config, fish_config_dir, oh_my_fish, omf_theme, vim]
 ```
 
