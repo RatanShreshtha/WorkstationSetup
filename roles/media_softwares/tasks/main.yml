@@ -1,8 +1,8 @@
 ---
-  - name:       Install multimedia, chat softwares
+  - name:          Install multimedia, chat softwares
     dnf:
-      name:     "{{ item }}"
-      state:    present
+      name:        "{{ item }}"
+      state:       present
     with_items:
       - gimp
       - vlc
@@ -15,3 +15,34 @@
       - shotwell
     tags:
       - mutimedia
+
+  - name:          Make folder for softwares
+    file:
+      path:      "/home/{{user}}/Desktop/softwares/"
+      state:     directory
+    become:      false
+    become_user: "{{ user }}"
+    tags:
+      - torbrowser
+
+
+  - name:          Unarchive torbrowser to ~/Desktop/softwares
+    unarchive:
+      src:         "{{torbrowser_url}}"
+      dest:        "/home/{{user}}/Desktop/softwares/"
+      remote_src:  yes
+    become:        false
+    become_user:   "{{ user }}"
+    tags:
+        - torbrowser
+
+
+  - name:          Make desktop entry for torbrowser
+    template:
+      src:       torbrowser.j2
+      dest:      ~/.local/share/applications/torbrowser.desktop
+    become:      false
+    become_user: "{{ user }}"
+    tags:
+      - torbrowser
+      - torbrowser_icon
