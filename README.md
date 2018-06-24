@@ -47,13 +47,13 @@ playbook: site.yml
       TASK TAGS: [basic, dnf_update, rpmfusion]
 
   play #2 (all): Setup and isntall developement tools, libraries and dependancies	TAGS: [developement]
-      TASK TAGS: [atom, dev_deps, developement, npm, pip, postman, postman_icon, programming_lang, terminal]
+      TASK TAGS: [atom, dev_deps, developement, lang-tools, npm, pip, postman, postman_icon, programming_lang, terminal]
 
   play #3 (all): Install necesaassy utils and packages	TAGS: [utils]
       TASK TAGS: [utils]
 
   play #4 (all): Install all necesaassy multimedia softwares	TAGS: [media_softwares]
-      TASK TAGS: [media_softwares, mutimedia]
+      TASK TAGS: [media_softwares, mutimedia, torbrowser, torbrowser_icon]
 
   play #5 (all): Install more wallpapers	TAGS: [wallpapers]
       TASK TAGS: [wallpapers]
