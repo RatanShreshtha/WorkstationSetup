@@ -1,0 +1,134 @@
+---
+  - name:         Install the development, basic group
+    dnf:
+      name:       "{{ item }}"
+      state:      present
+    with_items:
+      - zlib.i686
+      - ncurses-libs.i686
+      - bzip2-libs.i686
+      - glibc.i686
+      - glibc-devel.i686
+      - libstdc++.i686
+      - zlib-devel.i686
+      - ncurses-devel.i686
+      - libX11-devel.i686
+      - libXrender.i686
+      - libXrandr.i686
+      - android-tools
+      - usbutils
+    tags:
+      - dev_deps
+
+
+  - name:         Install the development libraries
+    dnf:
+      name:       "{{ item }}"
+      state:      present
+    with_items:
+      - "@Development Tools"
+      - '@C Development Tools and Libraries'
+      - '@Basic Desktop'
+      - python-devel
+      - python3-devel
+      - python3-pip
+      - dnf-plugins-core
+      - guestfs-browser
+      - libguestfs-tools
+      - python-libguestfs
+      - virt-top
+      - gtksourceview3
+      - libselinux-python
+    tags:
+      - dev_deps
+
+  - name:         Install Programming Languages and development depandancies
+    dnf:
+      name:       "{{ item }}"
+      state:      present
+    with_items:
+     - java-openjdk
+     - icedtea-web
+     - nodejs
+     - go
+     - rust
+     - elixir
+    tags:
+      - programming_lang
+
+  - name:         Install vim, fish, tilix
+    dnf:
+      name:       "{{ item }}"
+      state:      present
+    with_items:
+      - vim
+      - fish
+      - tilix
+    tags:
+      - terminal
+
+
+  - name:         Install packages for programming Languages
+    dnf:
+      name:       "{{ item }}"
+      state:      present
+    with_items:
+      - cargo
+    tags:
+      - lang-tools
+
+
+  - name:         Install global npm packages.
+    npm:
+      name:       "{{ item }}"
+      global:     yes
+      state:      present
+    with_items:
+      - yarn
+      - mocha
+      - forever
+      - grunt
+      - gulp
+      - bower
+      - newman
+      - '@vue/cli'
+      - vue-language-server
+      - n
+    tags:
+      - npm
+
+
+  - name:         Install pip packages.
+    pip:
+      name:       "{{ item }}"
+      executable: pip3
+      state:      present
+    with_items:
+      - httpie
+      - isort
+      - mypy
+      - flake8
+      - coala-bears
+      - cookiecutter
+      - Sphinx
+      - pipenv
+      - python-language-server
+      - black
+    tags:
+      - pip
+
+  - name:         Install Sublimetext 3
+    become:       yes
+    command:      flatpak install --assumeyes flathub com.sublimetext.three
+
+  - name:         Install Visual Studio Code
+    become:       yes
+    command:      flatpak install --assumeyes flathub com.visualstudio.code
+
+  - name:         Install Atom
+    become:       yes
+    command:      flatpak install --assumeyes flathub io.atom.Atom
+
+  - name:         Install Postman
+    become:       yes
+    command:      flatpak install --assumeyes flathub com.getpostman.Postman

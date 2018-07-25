@@ -29,3 +29,18 @@
       name:     "{{ user }}"
       groups:   wireshark
       append:   yes
+
+
+  - name:         Install Dropbox
+    become:       yes
+    command:      flatpak install --assumeyes flathub com.dropbox.Client
+
+
+  - name:         Install GeoGebra
+    become:       yes
+    command:      flatpak install --assumeyes flathub org.geogebra.GeoGebra
+
+
+  - name:         Install App Editor
+    become:       yes
+    command:      flatpak install --assumeyes flathub com.github.donadigo.appeditor

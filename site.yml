@@ -16,11 +16,9 @@
     become_method: sudo
     become_user:   root
     roles:
-      - dev_dependencies
-      - programming_lang
-      - dev_tools
+      - development
     tags:
-      - developement
+      - development
 
 
   - name:          Install necesaassy utils and packages
@@ -29,7 +27,7 @@
     become_method: sudo
     become_user:   root
     roles:
-      - utils_packages
+      - utils
     tags:
       - utils
 
@@ -40,9 +38,9 @@
     become_method: sudo
     become_user:   root
     roles:
-      - media_softwares
+      - multimedia
     tags:
-      - media_softwares
+      - multimedia
 
 
   - name:          Install more wallpapers

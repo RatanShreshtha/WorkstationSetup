@@ -4,7 +4,7 @@
       name:     '*'
       state:    latest
     tags:
-      - dnf_update
+      - update
 
 
   - name:       Get version of Fedora
@@ -23,3 +23,9 @@
      - "{{rpmfusion_nonfree_release}}"
     tags:
       - rpmfusion
+
+
+  - name:       Enable Flathub repository
+    command: flatpak remote-add --if-not-exists flathub "{{flathub_repo_url}}"
+    tags:
+      - flathub
