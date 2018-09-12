@@ -44,16 +44,16 @@ $ ansible-playbook -i inventory site.yml -K -b -v -e "user=<your username>" --ta
 playbook: site.yml
 
   play #1 (all): Update packages and install basic packages	TAGS: [basic]
-      TASK TAGS: [basic, dnf_update, rpmfusion]
+      TASK TAGS: [basic, flathub, rpmfusion, update]
 
-  play #2 (all): Setup and isntall developement tools, libraries and dependancies	TAGS: [developement]
-      TASK TAGS: [atom, dev_deps, developement, lang-tools, npm, pip, postman, postman_icon, programming_lang, terminal]
+  play #2 (all): Setup and isntall developement tools, libraries and dependancies	TAGS: [development]
+      TASK TAGS: [dev_deps, development, lang-tools, npm, pip, programming_lang, terminal]
 
   play #3 (all): Install necesaassy utils and packages	TAGS: [utils]
       TASK TAGS: [utils]
 
-  play #4 (all): Install all necesaassy multimedia softwares	TAGS: [media_softwares]
-      TASK TAGS: [media_softwares, mutimedia, torbrowser, torbrowser_icon]
+  play #4 (all): Install all necesaassy multimedia softwares	TAGS: [multimedia]
+      TASK TAGS: [multimedia, mutimedia, torbrowser, torbrowser_icon]
 
   play #5 (all): Install more wallpapers	TAGS: [wallpapers]
       TASK TAGS: [wallpapers]
