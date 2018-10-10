@@ -1,6 +1,6 @@
 # Workstation Setup
 
-This playbook can be used to configure a freshly installed Fedora box according to your need, this installs all necessary utilities, software, tools and programs.
+This playbook can be used to configure a freshly installed Fedora box according to your need, this installs all necessary utilities, software, tools, and programs.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-In order to use this playbook you must have [ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) installed in your machine and sshd running on your system along with privileges to install new packages.
+In order to use this playbook, you must have [ansible](http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) installed in your machine and sshd running on your system along with privileges to install new packages.
 
 #### To install and enable sshd.
 ```
