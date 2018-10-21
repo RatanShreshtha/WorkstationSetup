@@ -33,7 +33,8 @@ $ cd Workstation-Setup
 ```
 $ ansible-playbook -i inventory site.yml -K -b -v -e "user=<your username>"
 ```
-**Make sure that user is same as the name of your user for which you want to configure the system.**
+
+**Make sure that user is same as the name of your user for which you want to configure the system and then enter the password for the user.**
 
 - To just run few commands with tags
 ```
