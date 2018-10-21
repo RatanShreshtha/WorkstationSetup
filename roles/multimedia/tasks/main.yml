@@ -55,7 +55,3 @@
   - name:         Install Signal
     become:       yes
     command:      flatpak install --assumeyes flathub org.signal.Signal
-
-  - name:         Install Web Torrent
-    become:       yes
-    command:      flatpak install --assumeyes flathub io.webtorrent.WebTorrent
