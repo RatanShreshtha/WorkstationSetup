@@ -117,17 +117,31 @@
     tags:
       - pip
 
-  - name:         Install Sublimetext 3
-    become:       yes
-    command:      flatpak install --assumeyes flathub com.sublimetext.three
+  - name:         Add GPG key for vscode
+    rpm_key:
+      state:      present
+      key:        "{{vscode_gpgkey_url}}"
+    tags:
+      - vscode
 
-  - name:         Install Visual Studio Code
-    become:       yes
-    command:      flatpak install --assumeyes flathub com.visualstudio.code
 
-  - name:         Install Atom
-    become:       yes
-    command:      flatpak install --assumeyes flathub io.atom.Atom
+  - name:         Copy vscode.repo to yum.repos.d
+    copy:
+      src:        vscode.repo
+      dest:       /etc/yum.repos.d/vscode.repo
+      owner:      root
+      group:      root
+      mode:       0644
+    tags:
+      - vscode
+
+
+  - name:         Install vscode text editor
+    dnf:
+      name:       code
+      state:      present
+    tags:
+      - vscode
 
   - name:         Install Postman
     become:       yes
