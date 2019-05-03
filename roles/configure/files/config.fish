@@ -12,5 +12,4 @@ set -g theme_avoid_ambiguous_glyphs yes
 set -g theme_nerd_fonts yes
 set -g theme_show_exit_status yes
 set -g default_user your_normal_user
-set -g theme_color_scheme solarized-dark
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
