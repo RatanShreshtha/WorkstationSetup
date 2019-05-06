@@ -9,7 +9,6 @@
       - youtube-dl
       - deluge
       - inkscape
-      - hexchat
       - picard
       - entangle
       - shotwell
@@ -55,3 +54,15 @@
   - name:         Install Signal
     become:       yes
     command:      flatpak install --assumeyes flathub org.signal.Signal
+
+  - name:         Install Riot
+    become:       yes
+    command:      flatpak install --assumeyes flathub im.riot.Riot
+
+  - name:         Install Spotify
+    become:       yes
+    command:      flatpak install --assumeyes flathub flathub com.spotify.Client
+
+  - name:         Install Podcasts
+    become:       yes
+    command:      flatpak install --assumeyes flathub org.gnome.Podcasts
