@@ -10,7 +10,7 @@
       - basic
 
 
-  - name:          Setup and isntall developement tools, libraries and dependancies
+  - name:          Setup and install developement tools, libraries and dependancies
     hosts:         all
     become:        true
     become_method: sudo
@@ -21,7 +21,7 @@
       - development
 
 
-  - name:          Install necesaassy utils and packages
+  - name:          Install necessary utils and packages
     hosts:         all
     become:        true
     become_method: sudo
@@ -32,7 +32,7 @@
       - utils
 
 
-  - name:          Install all necesaassy multimedia softwares
+  - name:          Install all necessary multimedia softwares
     hosts:         all
     become:        true
     become_method: sudo
