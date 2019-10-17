@@ -1,31 +1,28 @@
 ---
-  - name:       Update all dnf packages
-    dnf:
-      name:     '*'
-      state:    latest
-    tags:
-      - update
+- name: Update all dnf packages
+  dnf:
+    name: "*"
+    state: latest
+  tags:
+    - update
 
+- name: Get version of Fedora
+  command: rpm -E %fedora
+  register: fedora_version
+  tags:
+    - rpmfusion
 
-  - name:       Get version of Fedora
-    command:    rpm -E %fedora
-    register:   fedora_version
-    tags:
-      - rpmfusion
+- name: Install rpmfusion repositories
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{rpmfusion_free_release}}"
+    - "{{rpmfusion_nonfree_release}}"
+  tags:
+    - rpmfusion
 
-
-  - name:       Install rpmfusion repositories
-    dnf:
-      name:     "{{ item }}"
-      state:    present
-    with_items:
-     - "{{rpmfusion_free_release}}"
-     - "{{rpmfusion_nonfree_release}}"
-    tags:
-      - rpmfusion
-
-
-  - name:       Enable Flathub repository
-    command: flatpak remote-add --if-not-exists flathub "{{flathub_repo_url}}"
-    tags:
-      - flathub
+- name: Enable Flathub repository
+  command: flatpak remote-add --if-not-exists flathub "{{flathub_repo_url}}"
+  tags:
+    - flathub
