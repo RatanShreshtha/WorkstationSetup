@@ -5,8 +5,8 @@
     daemon_reload: yes
     name: crond
 
-- name: Start and enable powertop
+- name: Start and enable libvirtd
   systemd:
-    name: powertop
+    name: libvirtd
     state: started
     enabled: True

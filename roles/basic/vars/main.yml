@@ -1,4 +1,4 @@
 ---
-  rpmfusion_free_release:    'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm'
-  rpmfusion_nonfree_release: 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm'
-  flathub_repo_url: 'https://flathub.org/repo/flathub.flatpakrepo'
+rpmfusion_free_release: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
+rpmfusion_nonfree_release: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version.stdout }}.noarch.rpm"
+flathub_repo_url: "https://flathub.org/repo/flathub.flatpakrepo"

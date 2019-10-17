@@ -1,46 +1,42 @@
 ---
-  - name:       Install utils
-    dnf:
-      name:     "{{ item }}"
-      state:    present
-    with_items:
-      - mediawriter
-      - nuntius
-      - labyrinth
-      - powertop
-      - gnome-todo
-      - wireshark
-      - ibus-typing-booster
-      - hunspell-en
-      - hunspell-hi
-      - chromium
-      - onionshare
-      - gnome-shell-extension-pomodoro
-      - exa
-      - ripgrep
-      - putty
-    notify:
-      - Reload systemd daemon
-      - Start and enable powertop
+- name: Install utils
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - mediawriter
+    - nuntius
+    - labyrinth
+    - powertop
+    - gnome-todo
+    - wireshark
+    - ibus-typing-booster
+    - hunspell-en
+    - hunspell-hi
+    - chromium
+    - onionshare
+    - gnome-shell-extension-pomodoro
+    - exa
+    - ripgrep
+    - putty
+  notify:
+    - Reload systemd daemon
+    - Start and enable powertop
 
+- name: Added user to wireshark group
+  user:
+    name: "{{ user }}"
+    groups: wireshark
+    append: yes
 
-  - name:       Added user to wireshark group
-    user:
-      name:     "{{ user }}"
-      groups:   wireshark
-      append:   yes
+- name: Install Dropbox
+  become: yes
+  command: flatpak install --assumeyes flathub com.dropbox.Client
 
+- name: Install GeoGebra
+  become: yes
+  command: flatpak install --assumeyes flathub org.geogebra.GeoGebra
 
-  - name:         Install Dropbox
-    become:       yes
-    command:      flatpak install --assumeyes flathub com.dropbox.Client
-
-
-  - name:         Install GeoGebra
-    become:       yes
-    command:      flatpak install --assumeyes flathub org.geogebra.GeoGebra
-
-
-  - name:         Install App Editor
-    become:       yes
-    command:      flatpak install --assumeyes flathub com.github.donadigo.appeditor
+- name: Install App Editor
+  become: yes
+  command: flatpak install --assumeyes flathub com.github.donadigo.appeditor

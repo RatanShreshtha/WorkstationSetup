@@ -1,76 +1,70 @@
 ---
-  - name:          Update packages and install basic packages
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - basic
-    tags:
-      - basic
+- name: Update packages and install basic packages
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - basic
+  tags:
+    - basic
 
+- name: Setup and install development tools, libraries and dependencies
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - development
+  tags:
+    - development
 
-  - name:          Setup and install developement tools, libraries and dependancies
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - development
-    tags:
-      - development
+- name: Install necessary utils and packages
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - utils
+  tags:
+    - utils
 
+- name: Install all necessary multimedia softwares
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - multimedia
+  tags:
+    - multimedia
 
-  - name:          Install necessary utils and packages
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - utils
-    tags:
-      - utils
+- name: Install more wallpapers
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - wallpapers
+  tags:
+    - wallpapers
 
+- name: Install virtualization softwares
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - virtualization
+  tags:
+    - virtualization
 
-  - name:          Install all necessary multimedia softwares
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - multimedia
-    tags:
-      - multimedia
-
-
-  - name:          Install more wallpapers
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - wallpapers
-    tags:
-      - wallpapers
-
-
-  - name:          Install virtualisation softwares
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - virtualisation
-    tags:
-      - virtualisation
-
-
-  - name:          Configure vim and fish
-    hosts:         all
-    become:        true
-    become_method: sudo
-    become_user:   root
-    roles:
-      - configure
-    tags:
-      - configure
+- name: Configure vim and fish
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - configure
+  tags:
+    - configure
