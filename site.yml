@@ -2,8 +2,6 @@
 - name: Update packages and install basic packages
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - basic
   tags:
@@ -12,8 +10,6 @@
 - name: Setup and install development tools, libraries and dependencies
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - development
   tags:
@@ -22,8 +18,6 @@
 - name: Install necessary utils and packages
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - utils
   tags:
@@ -32,8 +26,6 @@
 - name: Install all necessary multimedia softwares
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - multimedia
   tags:
@@ -42,8 +34,6 @@
 - name: Install more wallpapers
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - wallpapers
   tags:
@@ -52,8 +42,6 @@
 - name: Install virtualization softwares
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - virtualization
   tags:
@@ -62,8 +50,6 @@
 - name: Configure vim and fish
   hosts: all
   become: true
-  become_method: sudo
-  become_user: root
   roles:
     - configure
   tags:
