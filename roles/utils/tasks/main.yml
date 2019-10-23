@@ -40,3 +40,7 @@
 - name: Install App Editor
   become: yes
   command: flatpak install --assumeyes flathub com.github.donadigo.appeditor
+
+- name: Install KeePassXC password manager
+  become: yes
+  command: flatpak install --assumeyes flathub org.keepassxc.KeePassXC
