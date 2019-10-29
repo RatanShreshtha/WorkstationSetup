@@ -138,5 +138,4 @@
     - vscode
 
 - name: Install Postman
-  become: yes
   command: flatpak install --assumeyes flathub com.getpostman.Postman

@@ -4,21 +4,15 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - f30-backgrounds-gnome
     - f29-backgrounds-gnome
     - f28-backgrounds-gnome
     - f27-backgrounds-gnome
     - f26-backgrounds-gnome
     - f25-backgrounds-gnome
-    - f24-backgrounds-gnome
-    - f23-backgrounds-gnome
-    - f22-backgrounds-gnome
-    - f21-backgrounds-gnome
+    - f30-backgrounds-extras-gnome
     - f29-backgrounds-extras-gnome
     - f28-backgrounds-extras-gnome
     - f27-backgrounds-extras-gnome
     - f26-backgrounds-extras-gnome
     - f25-backgrounds-extras-gnome
-    - f24-backgrounds-extras-gnome
-    - f23-backgrounds-extras-gnome
-    - f22-backgrounds-extras-gnome
-    - f21-backgrounds-extras-gnome
