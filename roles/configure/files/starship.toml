@@ -1,0 +1,66 @@
+[aws]
+symbol = " "
+
+[character]
+symbol = "➜"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[conda]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_only = false
+prefix = "ﲾ "
+suffix = "⟫"
+trim_at = ".local"
+disabled = false
+
+[java]
+symbol = " "
+
+[jobs]
+symbol = "+ "
+threshold = 4
+
+[kubernetes]
+symbol = "ﴱ "
+style = "dim green"
+disabled = false
+
+[memory_usage]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[username]
+show_always = true
+
