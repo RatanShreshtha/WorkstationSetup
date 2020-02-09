@@ -9,7 +9,7 @@
 - name: Get vimrc for user
   copy:
     src: vimrc
-    dest: "/home/{{user}}/.vimrc"
+    dest: "$HOME/.vimrc"
     owner: "{{user}}"
     group: "{{user}}"
   tags:
@@ -21,43 +21,3 @@
     shell: /usr/bin/fish
   tags:
     - fish
-
-- name: Install oh-my-fish
-  shell: curl -L "{{oh_my_fish}}" | fish
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - fish
-    - oh_my_fish
-  ignore_errors: yes
-
-- name: Install bob the fish theme for fish shell
-  shell: omf install bob the fish
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - fish
-    - omf_theme
-  ignore_errors: yes
-
-- name: Make fish config directory
-  file:
-    path: "/home/{{user}}/.config/fish/"
-    state: directory
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - fish
-    - fish_config_dir
-  ignore_errors: yes
-
-- name: Get fish config for user
-  copy:
-    src: config.fish
-    dest: "/home/{{user}}/.config/fish/config.fish"
-    owner: "{{user}}"
-    group: "{{user}}"
-  tags:
-    - fish
-    - fish_config
-  ignore_errors: yes

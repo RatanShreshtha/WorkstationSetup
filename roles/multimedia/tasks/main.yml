@@ -10,39 +10,9 @@
     - deluge
     - inkscape
     - picard
-    - entangle
     - shotwell
   tags:
     - mutimedia
-
-- name: Make folder for softwares
-  file:
-    path: "/home/{{user}}/Desktop/softwares/"
-    state: directory
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - torbrowser
-
-- name: Un-archive tor browser to ~/Desktop/softwares
-  unarchive:
-    src: "{{torbrowser_url}}"
-    dest: "/home/{{user}}/Desktop/softwares/"
-    remote_src: yes
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - torbrowser
-
-- name: Make desktop entry for torbrowser
-  template:
-    src: torbrowser.j2
-    dest: ~/.local/share/applications/torbrowser.desktop
-  become: false
-  become_user: "{{ user }}"
-  tags:
-    - torbrowser
-    - torbrowser_icon
 
 - name: Install Skype
   command: flatpak install --assumeyes flathub com.skype.Client
@@ -55,3 +25,6 @@
 
 - name: Install Podcasts
   command: flatpak install --assumeyes flathub org.gnome.Podcasts
+
+- name: Install Tor Launcher
+  command: flatpak install --assumeyes flathub com.github.micahflee.torbrowser-launcher

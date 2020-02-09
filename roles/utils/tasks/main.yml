@@ -8,26 +8,16 @@
     - nuntius
     - labyrinth
     - powertop
-    - gnome-todo
-    - wireshark
     - ibus-typing-booster
     - hunspell-en
     - hunspell-hi
-    - chromium
     - onionshare
     - gnome-shell-extension-pomodoro
     - exa
     - ripgrep
-    - putty
   notify:
     - Reload systemd daemon
     - Start and enable powertop
-
-- name: Added user to wireshark group
-  user:
-    name: "{{ user }}"
-    groups: wireshark
-    append: yes
 
 - name: Install Dropbox
   command: flatpak install --assumeyes flathub com.dropbox.Client
@@ -37,6 +27,3 @@
 
 - name: Install App Editor
   command: flatpak install --assumeyes flathub com.github.donadigo.appeditor
-
-- name: Install KeePassXC password manager
-  command: flatpak install --assumeyes flathub org.keepassxc.KeePassXC

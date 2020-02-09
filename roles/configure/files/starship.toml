@@ -2,7 +2,7 @@
 symbol = " "
 
 [character]
-symbol = "➜"
+symbol = ""
 error_symbol = "✗"
 use_symbol_for_status = true
 
@@ -10,7 +10,19 @@ use_symbol_for_status = true
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = " "
+
+[git_status]
+conflicted = "ﳤ"
+ahead = ""
+behind = ""
+diverged = ""
+untracked = "?"
+stashed = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = "﯊"
 
 [golang]
 symbol = " "
@@ -24,7 +36,7 @@ symbol = " "
 [hostname]
 ssh_only = false
 prefix = "ﲾ "
-suffix = "⟫"
+suffix = ""
 trim_at = ".local"
 disabled = false
 
@@ -63,4 +75,3 @@ symbol = " "
 
 [username]
 show_always = true
-
