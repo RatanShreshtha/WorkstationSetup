@@ -2,7 +2,7 @@
 symbol = " "
 
 [character]
-symbol = ""
+symbol = ""
 error_symbol = "✗"
 use_symbol_for_status = true
 
@@ -13,16 +13,16 @@ symbol = " "
 symbol = " "
 
 [git_status]
-conflicted = "ﳤ"
-ahead = ""
-behind = ""
-diverged = ""
-untracked = "?"
-stashed = ""
-modified = ""
-staged = ""
-renamed = ""
-deleted = "﯊"
+conflicted = " ﳤ "
+ahead = "  "
+behind = "  "
+diverged = "  "
+untracked = "  "
+stashed = "  "
+modified = "  "
+staged = "  "
+renamed = "  "
+deleted = " ﯊ "
 
 [golang]
 symbol = " "

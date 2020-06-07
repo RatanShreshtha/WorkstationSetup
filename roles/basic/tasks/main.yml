@@ -22,7 +22,10 @@
   tags:
     - rpmfusion
 
-- name: Enable Flathub repository
-  command: flatpak remote-add --if-not-exists flathub "{{flathub_repo_url}}"
+- name: Add the flathub flatpak repository remote to the user installation
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
   tags:
-    - flathub
+    - flatpak

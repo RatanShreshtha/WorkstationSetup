@@ -5,25 +5,27 @@
     state: present
   with_items:
     - mediawriter
-    - nuntius
-    - labyrinth
-    - powertop
     - ibus-typing-booster
     - hunspell-en
     - hunspell-hi
     - onionshare
-    - gnome-shell-extension-pomodoro
-    - exa
+    - lsd
     - ripgrep
-  notify:
-    - Reload systemd daemon
-    - Start and enable powertop
+    - bat
+    - fd-find
+    - tldr
+    - ytop
+    - starship
+  tags:
+    - utils
 
-- name: Install Dropbox
-  command: flatpak install --assumeyes flathub com.dropbox.Client
-
-- name: Install GeoGebra
-  command: flatpak install --assumeyes flathub org.geogebra.GeoGebra
-
-- name: Install App Editor
-  command: flatpak install --assumeyes flathub com.github.donadigo.appeditor
+- name: Install Developer Tools from flathub
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  with_items:
+      - com.dropbox.Client
+      - com.github.donadigo.appeditor
+      - com.bitwarden.desktop
+    tags:
+      - utils

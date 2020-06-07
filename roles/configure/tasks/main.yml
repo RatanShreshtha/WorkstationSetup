@@ -6,7 +6,7 @@
   tags:
     - vim
 
-- name: Get vimrc for user
+- name: Set vimrc
   copy:
     src: vimrc
     dest: "$HOME/.vimrc"
@@ -14,6 +14,72 @@
     group: "{{user}}"
   tags:
     - vim
+
+- name: Set .gitconfig
+  copy:
+    src: .gitconfig
+    dest: "$HOME/.gitconfig"
+    owner: "{{user}}"
+    group: "{{user}}"
+  tags:
+    - gitconfig
+
+- name: Set starship.toml
+  copy:
+    src: starship.toml
+    dest: "$HOME/.config/starship.toml"
+    owner: "{{user}}"
+    group: "{{user}}"
+  tags:
+    - prompt
+    - starship
+
+- name: Create config directory for fish
+  file:
+   path: "$HOME/.config/fish/"
+   state: directory 
+   mode: "0755"
+
+- name: Set config.fish
+  copy:
+    src: config.fish
+    dest: "$HOME/.config/fish/config.fish"
+    owner: "{{user}}"
+    group: "{{user}}"
+  tags:
+    - vim
+
+- name: Create softwares directory
+  file:
+   path: "$HOME/softwares"
+   state: directory 
+   mode: "0755"
+
+- name: Download nerd fonts
+  git:
+    repo: 'https://github.com/ryanoasis/nerd-fonts'
+    dest: "$HOME/softwares/nerd-fonts"
+    depth: 1
+
+- name: Install nerd fonts
+  shell: ./install.sh
+  args:
+    chdir: "$HOME/softwares/nerd-fonts"
+
+- name: Create tilix config directory
+  file:
+   path: "$HOME/.config/tilix/"
+   state: directory 
+   mode: "0755"
+
+- name: Set schemes
+  copy:
+    src: schemes
+    dest: "$HOME/.config/tilix/schemes"
+    owner: "{{user}}"
+    group: "{{user}}"
+  tags:
+    - tilix
 
 - name: Set fish as default shell
   user:

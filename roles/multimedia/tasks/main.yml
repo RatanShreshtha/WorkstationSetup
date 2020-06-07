@@ -1,30 +1,28 @@
 ---
-- name: Install multimedia, chat softwares
+- name: Install multimedia software
   dnf:
     name: "{{ item }}"
     state: present
   with_items:
     - gimp
     - vlc
-    - youtube-dl
     - deluge
     - inkscape
-    - picard
     - shotwell
+    - polari
+    - foliate
   tags:
     - mutimedia
 
-- name: Install Skype
-  command: flatpak install --assumeyes flathub com.skype.Client
-
-- name: Install Signal
-  command: flatpak install --assumeyes flathub org.signal.Signal
-
-- name: Install Riot
-  command: flatpak install --assumeyes flathub im.riot.Riot
-
-- name: Install Podcasts
-  command: flatpak install --assumeyes flathub org.gnome.Podcasts
-
-- name: Install Tor Launcher
-  command: flatpak install --assumeyes flathub com.github.micahflee.torbrowser-launcher
+- name: Install multimedia software from flathub
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  with_items:
+      - com.skype.Client
+      - org.signal.Signal
+      - org.gnome.Podcasts
+      - com.spotify.Client
+      - com.github.micahflee.torbrowser-launcher
+    tags:
+      - mutimedia

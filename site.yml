@@ -7,7 +7,7 @@
   tags:
     - basic
 
-- name: Setup and install development tools, libraries and dependencies
+- name: Set up and install development tools, libraries and dependencies
   hosts: all
   become: true
   roles:
@@ -23,7 +23,7 @@
   tags:
     - utils
 
-- name: Install all necessary multimedia softwares
+- name: Install all necessary multimedia software
   hosts: all
   become: true
   roles:
@@ -39,7 +39,7 @@
   tags:
     - wallpapers
 
-- name: Install virtualization softwares
+- name: Install virtualization software
   hosts: all
   become: true
   roles:
@@ -47,7 +47,7 @@
   tags:
     - virtualization
 
-- name: Configure vim and fish
+- name: Configure vim, fish and fish
   hosts: all
   become: true
   roles:

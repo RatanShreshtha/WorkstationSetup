@@ -1,5 +1,5 @@
 ---
-- name: Install the development, basic group
+- name: Install Development Libraries
   dnf:
     name: "{{ item }}"
     state: present
@@ -15,127 +15,50 @@
     - libX11-devel.i686
     - libXrender.i686
     - libXrandr.i686
-    - android-tools
-    - usbutils
-  tags:
-    - dev_deps
-
-- name: Install the development libraries
-  dnf:
-    name: "{{ item }}"
-    state: present
-  with_items:
     - "@Development Tools"
     - "@C Development Tools and Libraries"
     - "@Basic Desktop"
-    - python-devel
-    - python3-devel
-    - python3-pip
     - dnf-plugins-core
-    - guestfs-browser
-    - libguestfs-tools
-    - python-libguestfs
-    - virt-top
-    - gtksourceview3
-    - libselinux-python
   tags:
-    - dev_deps
+    - development-libraries
 
-- name: Install Programming Languages and development dependencies
+- name: Install Programming Languages
   dnf:
     name: "{{ item }}"
     state: present
   with_items:
-    - java-openjdk
-    - icedtea-web
     - nodejs
-    - go
     - rust
-    - elixir
   tags:
-    - programming_lang
+    - programming-languages
 
-- name: Install vim, fish, tilix
+- name: Install Developer Tools
   dnf:
     name: "{{ item }}"
-    state: present
-  with_items:
-    - vim
-    - fish
-    - tilix
-  tags:
-    - terminal
-
-- name: Install packages for programming Languages
-  dnf:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - cargo
-  tags:
-    - lang-tools
-
-- name: Install global npm packages.
-  npm:
-    name: "{{ item }}"
-    global: yes
-    state: present
-  with_items:
-    - yarn
-    - mocha
-    - forever
-    - grunt
-    - gulp
-    - bower
-    - newman
-    - "@vue/cli"
-    - vue-language-server
-    - n
-  tags:
-    - npm
-
-- name: Install pip packages.
-  pip:
-    name: "{{ item }}"
-    executable: pip3
     state: present
   with_items:
     - httpie
-    - isort
-    - mypy
-    - flake8
-    - coala-bears
-    - cookiecutter
-    - Sphinx
     - pipenv
-    - python-language-server
-    - black
-  tags:
-    - pip
+    - python3-black
+    - python3-isort
+    - python3-flake8
+    - python3-mypy
+    - python3-cookiecutter
+    - pre-commit
+    - cargo
+    - fish
+    - vim
+    - tilix
+    tags:
+      - developer-tools
 
-- name: Add GPG key for vscode
-  rpm_key:
+
+- name: Install Developer Tools from flathub
+  flatpak:
+    name: "{{ item }}"
     state: present
-    key: "{{vscode_gpgkey_url}}"
-  tags:
-    - vscode
-
-- name: Copy vscode.repo to yum.repos.d
-  copy:
-    src: vscode.repo
-    dest: /etc/yum.repos.d/vscode.repo
-    owner: root
-    group: root
-    mode: 0644
-  tags:
-    - vscode
-
-- name: Install vscode text editor
-  dnf:
-    name: code
-    state: present
-  tags:
-    - vscode
-
-- name: Install Postman
-  command: flatpak install --assumeyes flathub com.getpostman.Postman
+  with_items:
+      - com.visualstudio.code
+      - com.getpostman.Postman
+    tags:
+      - developer-tools
