@@ -8,6 +8,14 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 
+abbr -a c cd
+abbr -a .. cd ..
+abbr -a ... cd ../..
+abbr -a .... cd ../../..
+abbr -a ..... cd ../../../..
+abbr -a ...... cd ../../../../..
+abbr -a ....... cd ../../../../../..
+
 command -v lsd > /dev/null && alias ls="lsd --group-dirs first"
 command -v lsd > /dev/null && alias tree="lsd --tree --group-dirs first"
 
