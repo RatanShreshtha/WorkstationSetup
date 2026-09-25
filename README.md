@@ -68,10 +68,7 @@ playbook: site.yml
   play #5 (all): Install more wallpapers	TAGS: [wallpapers]
       TASK TAGS: [wallpapers]
 
-  play #6 (all): Install virtualization softwares	TAGS: [virtualization]
-      TASK TAGS: [virtualization]
-
-  play #7 (all): Configure vim and fish	TAGS: [configure]
+  play #6 (all): Configure vim and fish	TAGS: [configure]
       TASK TAGS: [configure, fish, fish_config, fish_config_dir, oh_my_fish, omf_theme, vim]
 ```
 

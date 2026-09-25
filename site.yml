@@ -39,14 +39,6 @@
   tags:
     - wallpapers
 
-- name: Install virtualization softwares
-  hosts: all
-  become: true
-  roles:
-    - virtualization
-  tags:
-    - virtualization
-
 - name: Configure vim and fish
   hosts: all
   become: true
